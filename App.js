@@ -84,24 +84,30 @@ const Tabs = ({ data, onItemPress, scrollX }) => {
   const [measures, setMeasures] = React.useState([])
   const containerRef = React.useRef()
 
-  React.useEffect(() => {
-    let m = []
-    data.forEach(item => {
-      item.ref.current.measureLayout(
-        containerRef.current,
-        (x, y, width, height) => {
-          m.push({
-            x, y,
-            width,
-            height
-          })
+  let i = 0
+  i += 1
 
-          if (m.length === data.length) {
-            setMeasures(m)
-          }
-        })
-    })
-  }, [])
+  console.log(containerRef.current)
+
+
+  React.useEffect(() => {
+      let m = []
+      data.forEach(item => {
+        item.ref.current.measureLayout(
+          containerRef.current,
+          (x, y, width, height) => {
+            m.push({
+              x, y,
+              width,
+              height
+            })
+
+            if (m.length === data.length) {
+              setMeasures(m)
+            }
+          })
+      })
+  }, [containerRef.current])
 
 
   return <View style={{
