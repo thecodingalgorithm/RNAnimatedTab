@@ -4,7 +4,7 @@ Hello.
 
 When I was working on a project, I had the need to design an animation that could do some thing like this:
 
-
+[Gif File](https://github.com/thecodingalgorithm/RNAnimatedTab/blob/main/assets/gifFile.gif)
 
 
 I didn't know how to do that.
